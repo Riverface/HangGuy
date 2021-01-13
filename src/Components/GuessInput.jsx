@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 
-export default function HangStart() {
+export default function HangGuess() {
+    
     return (
-        <div>
-      <button></button>
-      <button name='start'></button>
+        <div className="WordSquare">
+        <input type="character"></input>
         </div>
     );
-  }
+}

@@ -1,16 +1,20 @@
+import '../App.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import redux from 'react-redux';
+import { connect } from 'react-redux';
 
-class HangGuy extends React.Component {
-    render(props) {
-        <div className="HangGuyWindow">
-            <div className="bodyPart" id="guyHead"></div>
-            <div className="bodyPart" id="guyTorso"></div>
-            <div className="bodyPart" id="guyArmL"></div>
-            <div className="bodyPart" id="guyArmR"></div>
-            <div className="bodyPart" id="guyLegL"></div>
-            <div className="bodyPart" id="guyLegR"></div>
+const limb={};
+
+export default function HangGuy() {
+    return(
+        <div className="HangGuy">
+            <div className="HangHead"></div>
+            <div className="HangTorso"></div>
+            <div className="HangArmL"></div>
+            <div className="HangArmR"></div>
+            <div className="HangLegL"></div>
+            <div className="HangLegR"></div>
         </div>
-    }
+    );
 }

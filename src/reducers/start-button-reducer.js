@@ -1,3 +1,5 @@
+import { connect } from 'react-redux';
+
 export default (state = false, action) => {
     switch (action.type) {
     case 'TOGGLE_GAME':
