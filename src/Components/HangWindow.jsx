@@ -1,5 +1,6 @@
 import '../index.css';
 
+import GameWord from './GameWord'
 import GuessBox from './GuessBox';
 import HangGuy from './HangGuy';
 import HangStart from './HangStart';
@@ -13,26 +14,26 @@ class HangWindow extends React.Component {
         super(props);
         console.log(props);
         this.state = {
-            
+
         };
     }
     render(props) {
-        let visibleState = null;
-        visibleState =
-            <div className="HangWindow">
-                <GuessBox />
-                <HangGuy />
-                <HangStart />
-            </div>
+        let appDOM = null;
+        appDOM = <div className="HangWindow">
+            <HangStart />
+            <GuessBox />
+            <HangGuy />
+            <GameWord/>
+        </div>
 
-        return (visibleState);
+        return (appDOM);
     }
 }
 
 
 const mapStateToProps = state => {
     return {
-        
+
     }
 }
 HangWindow.propTypes = {

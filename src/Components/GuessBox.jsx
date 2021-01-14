@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import WordSquare from './WordSquare'
 import { connect } from 'react-redux';
 
 export default function GuessBox() {
     
     return (
-        <div className="WordSquare">
-        <input type="text"/>
+        <div className="GuessBox">
+        
         
         </div>
     );

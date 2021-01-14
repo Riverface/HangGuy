@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 
 export default function HangStart() {
     return (
-        <div>
-      <button></button>
-      <button name='start'></button>
+        <div className="HangStart">
+          <button className="startGameButton">Start Game</button>
         </div>
     );
   }

@@ -4,10 +4,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 
-const limb={};
+const limb = {};
 
 export default function HangGuy() {
-    return(
+    return (
         <div className="HangGuy">
             <div className="HangHead"></div>
             <div className="HangTorso"></div>
