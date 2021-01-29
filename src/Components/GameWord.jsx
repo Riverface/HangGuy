@@ -1,5 +1,6 @@
 import '../App.css';
 
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import WordSquare from './WordSquare'
@@ -14,6 +15,14 @@ export default function GameWord () {
     );
 }
 
-GameWord.propTypes = {
 
+const mapStateToProps = state => {
+    return {
+        gameWord: state.gameWord
+    }
+}
+GameWord.propTypes = {
+    gameWord: PropTypes.string
 };
+
+GameWord = connect(mapStateToProps)(GameWord);
