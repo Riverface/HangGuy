@@ -8,31 +8,33 @@ import { connect } from 'react-redux';
 const limb = {};
 
 export default function HangGuy(props) {
-    let head = <div className="HangHead animated" ></div>;
-    let torso = <div className="HangTorso animated" ></div>;
-    let armL = <div className="HangArmL animated" ></div>;
-    let armR = <div className="HangArmR animated" ></div>;
-    let legL = <div className="HangLegL animated" ></div>;
-    let legR = <div className="HangLegR animated" ></div>;
+    let head = <div key='head' className="HangHead animated" ></div>;
+    let torso = <div key='torso' className="HangTorso animated" ></div>;
+    let armL = <div key='armL' className="HangArmL animated" ></div>;
+    let armR = <div key='armR' className="HangArmR animated" ></div>;
+    let legL = <div key='legL' className="HangLegL animated" ></div>;
+    let legR = <div key='legR' className="HangLegR animated" ></div>;
     let wrongCt = 0;
-    let body = null;
+    let body = [];
+
 
     props.guessBox.map((currentValue) => {
-        if (props.gameWord.includes(currentValue)) {
+        body = [];
+        if (!props.gameWord.includes(currentValue)) {
             wrongCt++;
         }
         if (wrongCt > 0) {
-            body += head;
+            body.push(head);
             if (wrongCt > 1) {
-                body += torso;
+                body.push(torso);
                 if (wrongCt > 2) {
-                    body += armL;
+                    body.push(armL);
                     if (wrongCt > 3) {
-                        body += armR;
+                        body.push(armR);
                         if (wrongCt > 4) {
-                            body += legL;
+                            body.push(legL);
                             if (wrongCt > 5) {
-                                body += legR;
+                                body.push(legR);
                             }
                         }
                     }
@@ -42,7 +44,9 @@ export default function HangGuy(props) {
     });
     return (
         <div className="HangGuy">
-            {body}
+            {body.map((currentValue) => {
+                return currentValue;
+            })};
         </div>
     );
 }
