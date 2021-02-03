@@ -10,7 +10,7 @@ export default function HangGuess(props) {
     return (
         <div className="HangGuess">
             <form onSubmit={props.handleGuess}>
-                <input type="text" name="guess" max={1} ></input>
+                <input type="text" name="guess" maxLength="1" ></input>
                 <input type="submit" value="guess" />
             </form>
         </div>
@@ -18,17 +18,15 @@ export default function HangGuess(props) {
 }
 const mapStateToProps = state => {
     return {
-        startGameButton: state.startGameButton,
         gameWord: state.gameWord,
         exposedWord: state.exposedWord,
         guessBox: state.guessBox
     }
 }
 HangGuess.propTypes = {
-    startGameButton: PropTypes.bool,
     gameWord: PropTypes.string,
     exposedWord: PropTypes.string,
-    guessBox: PropTypes.arrayOf(PropTypes.object),
+    guessBox: PropTypes.arrayOf(PropTypes.string),
     handleGuess: PropTypes.func
 };
 

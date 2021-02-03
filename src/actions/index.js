@@ -1,26 +1,25 @@
 export const correctGuess = (guess) => {
-    const {letter, wrongGuesses, exposedWord} = guess;
+    const {guess, guessBox, exposedWord} = guess;
     return{
-        type:"RIGHT_GUESS",
-        letter,
+        type:"CORRECT_GUESS",
+        guess,
         exposedWord
     } 
 }
 
 export const wrongGuess = (guess) => {
-    const {letter, wrongGuesses, exposedWord} = guess;
+    const {guess, guessBox, exposedWord} = guess;
     return{
-        type:"WRONG_GUESS",
-        letter,
-        wrongGuesses
+        type:"INCORRECT_GUESS",
+        guess,
+        guessBox
     } 
 }
-
-export const addGuess = (guess) => {
-    const {letter, wrongGuesses, exposedWord} = guess;
+export const dupeGuess = (guess) => {
+    const {guess, guessBox, exposedWord} = guess;
     return{
-        type:"ADD_GUESS",
-        letter,
-        wrongGuesses
+        type:"DUPE_GUESS",
+        guess,
+        guessBox
     } 
 }

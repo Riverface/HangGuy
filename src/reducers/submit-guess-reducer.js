@@ -14,17 +14,11 @@ import { connect } from 'react-redux';
  *  @param {string} action.id
  */
 export default function submitGuessReducer(state = [], action) {
-    const { guess, id, type } = action;
-    if ( action.type == 'GUESS_CORRECT' || action.type ==  'GUESS_INCORRECT')
-        return (Object.assign(state, {
-            [id]: {
-                type: action.type,
-                guess: action.guess,
-            }
-        }));
-    else {
-
-        return state;
+    const { guess } = action; 
+    switch (action.type) {
+        case "ADD_GUESS":
+           return [...state, guess]
+        default:
+            return state;
     }
 }
-
